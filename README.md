@@ -20,3 +20,4 @@ Simply make sure that python is installed in your computer, navigate to the fold
 
 ## Credits
 * Dr. Cheah Wooi Ping
+* https://rosettacode.org/wiki/Dijkstra%27s_algorithm#Python

@@ -19,7 +19,7 @@ class Graph():
         neighbours = {vertex: set() for vertex in self.vertices}
         for start, end, cost in self.edges:
             neighbours[start].add((end, cost))
-        #pp(neighbours)
+        # pp(neighbours)
  
         while q:
             u = min(q, key=lambda vertex: dist[vertex])
@@ -31,7 +31,7 @@ class Graph():
                 if alt < dist[v]:                                  # Relax (u,v,a)
                     dist[v] = alt
                     previous[v] = u
-        #pp(previous)
+        pp(previous)
         s, u = deque(), dest
         while previous[u]:
             s.appendleft(u)
