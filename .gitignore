@@ -108,4 +108,5 @@ venv.bak/
 *.pyc
 
 # vscode
+.vscode
 .vscode/settings.json

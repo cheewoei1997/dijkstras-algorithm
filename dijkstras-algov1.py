@@ -2,7 +2,7 @@
 # ------------------------------------------------------------------------------
 from collections import namedtuple, deque
 from pprint import pprint as pp
-import test
+import networkxApi as networkGraph
 
  
 # ------------------------------------------------------------------------------
@@ -59,23 +59,23 @@ class Graph():
 
 
 def drawGraph():
-    test.addEdge(1, 2, 9)
-    test.addEdge(1, 6, 14)
-    test.addEdge(1, 7, 14)
-    test.addEdge(2, 3, 23)
-    test.addEdge(3, 4, 6)
-    test.addEdge(3, 5, 2)
-    test.addEdge(3, 6, 18)
-    test.addEdge(3, 8, 19)
-    test.addEdge(4, 5, 11)
-    test.addEdge(4, 8, 6)
-    test.addEdge(5, 6, 30)
-    test.addEdge(5, 7, 20)
-    test.addEdge(5, 8, 16)
-    test.addEdge(6, 7, 5)
-    test.addEdge(7, 8, 44)
-    test.drawGraph()
-    test.showGraph()
+    networkGraph.addEdge(1, 2, 9)
+    networkGraph.addEdge(1, 6, 14)
+    networkGraph.addEdge(1, 7, 14)
+    networkGraph.addEdge(2, 3, 23)
+    networkGraph.addEdge(3, 4, 6)
+    networkGraph.addEdge(3, 5, 2)
+    networkGraph.addEdge(3, 6, 18)
+    networkGraph.addEdge(3, 8, 19)
+    networkGraph.addEdge(4, 5, 11)
+    networkGraph.addEdge(4, 8, 6)
+    networkGraph.addEdge(5, 6, 30)
+    networkGraph.addEdge(5, 7, 20)
+    networkGraph.addEdge(5, 8, 16)
+    networkGraph.addEdge(6, 7, 5)
+    networkGraph.addEdge(7, 8, 44)
+    networkGraph.drawGraph()
+    networkGraph.showGraph()
 
 
 def main():

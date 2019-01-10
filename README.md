@@ -6,6 +6,13 @@ Here's how to get you started on copying all of the below tutorial codes. Run th
 
 Once you've cloned, just navigate to the folder that you have cloned and you're all set. Or you could just download it as a zip file.
 
+It is suggested that you use a virtualenv with Python 3.5 to make things easier. In the case that you have multiple python files, just run the code below.
+```pip install virtualenv```
+```virtualenv -p /path/to/python/python35 --distribute venv```
+
+Make sure to install all the dependencies involved in this project by running the code below. Or just go to the ```(requirements.txt)[../master/requirements.txt]``` file and download them manually.
+`pip install -r requirements.txt`
+
 
 ## Report
 [Click here](https://docs.google.com/document/d/1LBP5YthUArdHzuwBgMLLnY_c2a7Owu4Fre75FPwws_w/edit?usp=sharing). This is where we discuss the applications of Dijkstra's algorithm and its possibilities.
