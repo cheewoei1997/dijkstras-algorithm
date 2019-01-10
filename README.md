@@ -13,6 +13,8 @@ It is suggested that you use a virtualenv with Python 3.5 to make things easier.
 Make sure to install all the dependencies involved in this project by running the code below. Or just go to the ```(requirements.txt)[../master/requirements.txt]``` file and download them manually.
 `pip install -r requirements.txt`
 
+To set this project up an essential library must be painfully added. Download the [graphviz library](https://graphviz.gitlab.io/_pages/Download/Download_windows.html).
+
 
 ## Report
 [Click here](https://docs.google.com/document/d/1LBP5YthUArdHzuwBgMLLnY_c2a7Owu4Fre75FPwws_w/edit?usp=sharing). This is where we discuss the applications of Dijkstra's algorithm and its possibilities.
