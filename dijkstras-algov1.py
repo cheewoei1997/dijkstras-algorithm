@@ -54,7 +54,7 @@ class Graph():
                 break
             for v, cost in neighbours[u]:
                 alt = dist[u] + cost
-                if alt < dist[v]:                                  # Relax (u,v,a)
+                if alt < dist[v]:                           # Relax (u,v,a)
                     dist[v] = alt
                     previous[v] = u
         print('\nSMALLEST VALUE')
@@ -67,29 +67,55 @@ class Graph():
         return s
 
 
-def drawGraph(totalNodes, startNode, endNode, weight):
+def drawGraph(totalNodes, path, startNode, endNode, weight):
     # Creating a graph
     # Create an empty graph with no nodes and no edges.
-    G = nx.Graph()
-    
+    G = nx.DiGraph()
+
+    # Path chosen by Dijkstra's Algorithm
+    pStartNode = []
+    pEndNode = []
+    pWeights = []
+
+    # Generate start nodes and end nodes in two separate lists
+    for idx, val in enumerate(path):
+        pEndNode.append(val)
+        pStartNode.append(val)
+        if idx == 0:
+            pEndNode.pop()
+    pStartNode.pop()
+
+    # Combine the two seperate lists into one
+    pathEdges = list(zip(pStartNode, pEndNode))
+
+    # Obtain the weight of each step in the path
+    pWeights = [pWeights.append(item[2]) for item in graphItem for pathEdge
+        in pathEdges if (pathEdge[0] == item[0] and pathEdge[1] == item[1])]
+    blackEdges = [edge for edge in G.edges() if edge not in pathEdges]
+
     # Add edges or nodes into the graph
     for i in range(totalNodes):
         G.add_edge(startNode[i], endNode[i], weight=weight[i])
 
-    # Specify positioning of the graph using a dictionary
-    # pos = nx.spring_layout(G, scale=2, k=np.sqrt(len(G.nodes)))
-    # https://networkx.github.io/documentation/stable/reference/drawing.html
-    pos = nx.nx_pydot.graphviz_layout(G, prog='neato')
-
     # Keep nodes and edge labels in a dictionary
     edge_labels = dict([((u, v,), d['weight']) for u, v, d in G.edges(data=True)])
 
+    # Specify positioning of the graph using a dictionary
+    # https://networkx.github.io/documentation/stable/reference/drawing.html
+    pos = nx.nx_pydot.graphviz_layout(G, prog='neato')
+
     nx.draw(G, pos, edge_color='black', width=1, linewidths=1, node_size=500,
-        node_color='pink', labels={node:node for node in G.nodes()})
+        node_color='pink', labels={node:node for node in G.nodes()}, arrows=False)
 
     # Draw out the edge labels
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels,
         font_color='black')
+
+    nx.draw_networkx_edges(G, pos, edgelist=pathEdges, edge_color='red',
+        arrows=True, arrowsize=24)
+    nx.draw_networkx_edges(G, pos, edgelist=blackEdges, arrows=False)
+
+    
 
     showGraph()
 
@@ -102,7 +128,6 @@ def showGraph():
 
 def main():
     graph = Graph(graphItem)
-    # pp(graph.dijkstra(start_node, dest_node))
     path = graph.dijkstra(start_node, dest_node)
 
     totalNodes = len(graphItem)
@@ -110,7 +135,7 @@ def main():
     endNode = [item[1] for item in graphItem]
     weight = [item[2] for item in graphItem]
 
-    drawGraph(totalNodes, startNode, endNode, weight)
+    drawGraph(totalNodes, path, startNode, endNode, weight)
 
 
 if __name__ == "__main__":
