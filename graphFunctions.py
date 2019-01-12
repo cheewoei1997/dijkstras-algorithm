@@ -33,7 +33,7 @@ class Graph():
         for start, end, cost in self.edges:
             neighbours[start].add((end, cost))
         print('NEIGHBOURS')
-        # pp(neighbours)
+        pp(neighbours)
  
         while q:
             u = min(q, key=lambda vertex: dist[vertex])
@@ -45,8 +45,8 @@ class Graph():
                 if alt < dist[v]:                           # Relax (u,v,a)
                     dist[v] = alt
                     previous[v] = u
-        print('\nSMALLEST VALUE')
-        # pp(previous)
+        print('SMALLEST VALUE')
+        pp(previous)
         s, u = deque(), dest
         while previous[u]:
             s.appendleft(u)
@@ -77,8 +77,17 @@ def drawGraph(graphItem, totalNodes, path, startNode, endNode, weight):
     pathEdges = list(zip(pStartNode, pEndNode))
 
     # Obtain the weight of each step in the path
-    pWeights = [pWeights.append(item[2]) for item in graphItem for pathEdge
-        in pathEdges if (pathEdge[0] == item[0] and pathEdge[1] == item[1])]
+    for item in graphItem:
+        for pathEdge in pathEdges:
+            if (pathEdge[0] == item[0] and pathEdge[1] == item[1]):
+                pWeights.append(item[2])
+
+    # Get the total weight
+    totalWeight = 0
+    for pWeight in pWeights:
+        totalWeight += pWeight
+    print('Total weight:', totalWeight)
+    
     blackEdges = [edge for edge in G.edges() if edge not in pathEdges]
 
     # Add edges or nodes into the graph
@@ -104,6 +113,19 @@ def drawGraph(graphItem, totalNodes, path, startNode, endNode, weight):
     nx.draw_networkx_edges(G, pos, edgelist=blackEdges, arrows=False)
     
     showGraph()
+
+
+def swapNodes(sStartNode, sEndNode, weight):
+    startNodes = []
+    endNodes = []
+
+    startNodes.extend(sStartNode)
+    endNodes.extend(sEndNode)
+    startNodes.extend(sEndNode)
+    endNodes.extend(sStartNode)
+    weight += weight
+    
+    return startNodes, endNodes, weight
 
 
 # Show the drawn graph
