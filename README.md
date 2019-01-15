@@ -6,16 +6,8 @@ Here's how to get you started on copying all of the below tutorial codes. Run th
 
 Once you've cloned, just navigate to the folder that you have cloned and you're all set. Or you could just download it as a zip file.
 
-
-
-
-
-
-
-
 ## Report
 [Click here](https://docs.google.com/document/d/1LBP5YthUArdHzuwBgMLLnY_c2a7Owu4Fre75FPwws_w/edit?usp=sharing). This is where we discuss the applications of Dijkstra's algorithm and its possibilities.
-
 
 ## Slides
 [Click here](https://docs.google.com/presentation/d/10T7bEN9gTz4k7sUCgPKQM9qSyPP0G3n4_CIVblF9Sek/edit?usp=sharing). Simple slides to give the audience an idea about the implementation of Dijkstra's algoritm.
