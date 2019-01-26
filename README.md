@@ -22,7 +22,7 @@ It is suggested that you use a virtualenv with Python 3.5 to make things easier.
 Make sure to install all the dependencies involved in this project by running the code below. Or you can acquire the necessary libraries and download them manually.  
 `pip install -r requirements.txt`
 
-#### Step 3
+#### Step 3 (Optional)
 To set this project up this library is not essentially needed, but more of a preference. Download the [Graphviz library](https://graphviz.gitlab.io/_pages/Download/Download_windows.html).
 
 #### Step 4
