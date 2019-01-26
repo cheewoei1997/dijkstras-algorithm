@@ -3,23 +3,28 @@ from graphFunctions import Graph, namedtuple, drawGraph, swapNodes
 
 # ------------------------------------------------------------------------------
 # Pretty self-explanatory
-start_node = 'a'
-dest_node = 'h'
+# start_node = 'a'
+# dest_node = 'h'
 
-# start_node = 'KED'
-# dest_node = 'KTN'
+start_node = 'MLK'
+dest_node = 'PHG'
 
 
 # Specify the graph using the following format: (startNode, endNode, weight)
-graphItem = [('a', 'b', 9),  ('a', 'f', 14),  ('a', 'g', 14), ('b', 'c', 23),
-               ('c', 'f', 18), ('c', 'd', 6), ('c', 'h', 19), ('c', 'e', 2),
-               ('d', 'e', 11), ('d', 'h', 6), ('e', 'f', 30), ('e', 'g', 20),
-               ('e', 'h', 16), ('f', 'g', 5), ('g', 'h', 44)]
+# graphItem = [('a', 'b', 9),  ('a', 'f', 14),  ('a', 'g', 14), ('b', 'c', 23),
+#                ('c', 'f', 18), ('c', 'd', 6), ('c', 'h', 19), ('c', 'e', 2),
+#                ('d', 'e', 11), ('d', 'h', 6), ('e', 'f', 30), ('e', 'g', 20),
+#                ('e', 'h', 16), ('f', 'g', 5), ('g', 'h', 44)]
 
-# graphItem = [('MLK', 'KUL', 109),  ('KUL', 'KTN', 250), ('MLK', 'JHB', 300),
-#                ('KUL', 'PNG', 500), ('KUL', 'KED', 154), ('KED', 'PNG', 347),
-#                ('KTN', 'TRG', 300), ('TRG', 'KLN', 231), ('KED', 'PER', 87),
-#                ('JHB', 'SG', 210)]
+graphItem = [('JHR', 'MLK', 217),  ('MLK', 'NSN', 88), ('NSN', 'PJY', 59),
+               ('PJY', 'KUL', 43), ('NSN', 'KUL', 70), ('JHR', 'PHG', 357),
+               ('MLK', 'PHG', 396), ('KUL', 'PHG', 254), ('KUL', 'SGR', 27),
+               ('PJY', 'SGR', 42), ('TRG', 'PHG', 226), ('TRG', 'KTN', 163),
+               ('KTN', 'KDH', 354), ('KDH', 'PLS', 48), ('KUL', 'KTN', 436),
+               ('KTN', 'PRK', 347), ('PRK', 'TRG', 365), ('KUL', 'PRK', 199),
+               ('PRK', 'KDH', 239), ('PNG', 'KDH', 114), ('PNG', 'PRK', 157),
+               ('PNG', 'KTN', 340), ('PNG', 'TRG', 442), ('PNG', 'KUL', 353),
+               ('PNG', 'SGR', 360), ('PJY', 'PNG', 390)]
 
 
 # ------------------------------------------------------------------------------
